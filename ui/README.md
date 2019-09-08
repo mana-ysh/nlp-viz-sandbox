@@ -1,6 +1,7 @@
 # material-free
 
-These UI components are folk form https://github.com/creativetimofficial/vuetify-material-dashboard
+These UI components are folk form https://github.com/creativetimofficial/vuetify-material-dashboard.  
+Its Licence is [here](https://github.com/creativetimofficial/vuetify-material-dashboard/blob/master/LICENSE.md).
 
 ## Project setup
 ```
