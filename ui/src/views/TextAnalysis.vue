@@ -13,9 +13,16 @@
           title="Text analysis"
           text="Visualization fundamental text analysis"
         >
-          <v-card-text>
-            visualize
-          </v-card-text>
+          <v-textarea
+          outlined
+          name="input-7-4"
+          label="Text to be analyzed"
+          value="Input here"
+          v-model="inputText"
+          ></v-textarea>
+          <v-btn color="primary" v-on:click="analyze">Submit</v-btn>
+
+          <div id="hierplane-container"></div>
         </material-card>
       </v-col>
     </v-row>
@@ -23,12 +30,49 @@
 </template>
 
 <script>
+
+  const axios = require('axios')
+  // TODO: parameterize connection settings
+  const host = 'http://localhost'
+  const port = 5000
+  const endpoint = host + ':' + port + '/text_analyze'
+
   export default {
     data: () => ({
-    })
+      inputText: ''
+    }),
+    mounted () {
+      // TODO: use static external js/css script
+      let recaptchaScript = document.createElement('script')
+      recaptchaScript.setAttribute('src', 'https://unpkg.com/hierplane/dist/static/hierplane.min.js')
+      document.head.appendChild(recaptchaScript)
+
+      let style = document.createElement('link')
+      style.setAttribute('rel', 'stylesheet')
+      style.setAttribute('type', 'text/css')
+      style.setAttribute('href', 'https://unpkg.com/hierplane/dist/static/hierplane.min.css')
+      document.head.appendChild(style)
+    },
+    methods: {
+      renderTree (tree) {
+        // FIXME
+        hierplane.renderTree(tree, { target: '#hierplane-container', theme: 'light' })
+      },
+
+      analyze () {
+        axios({
+          method: 'post',
+          url: endpoint,
+          data: {
+            input_text: this.inputText
+          }
+        }).then(res => {
+          this.renderTree(res.data.tree)
+        })
+      }
+    }
   }
 </script>
 
 <style lang="scss">
- 
 </style>
