@@ -1,6 +1,6 @@
 # material-free
 
-This UI components are folk form https://github.com/creativetimofficial/vuetify-material-dashboard
+These UI components are folk form https://github.com/creativetimofficial/vuetify-material-dashboard
 
 ## Project setup
 ```
