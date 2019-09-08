@@ -15,7 +15,7 @@ RUN git clone https://github.com/WorksApplications/SudachiPy -b v0.1 && cd Sudac
 RUN cd SudachiPy/resources && wget https://github.com/WorksApplications/Sudachi/releases/download/v0.1.0/sudachi-0.1.0-dictionary-core.zip && \
     unzip sudachi-0.1.0-dictionary-core.zip && mv system_core.dic system.dic
 
-WORKDIR /appx
+WORKDIR /app
 
 RUN pip install -r requirements.txt
 
