@@ -33,8 +33,8 @@
 
   const axios = require('axios')
   // TODO: parameterize connection settings
-  const host = 'http://localhost'
-  const port = 5000
+  const host = process.env.VUE_APP_SERVER_HOST || 'http://localhost'
+  const port = process.env.VUE_APP_SERVER_PORT || 5000
   const endpoint = host + ':' + port + '/text_analyze'
 
   export default {
