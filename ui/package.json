@@ -40,7 +40,7 @@
     "eslint-config-vuetify": "*",
     "eslint-plugin-vue": "^5.0.0",
     "glob": "^7.1.4",
-    "node-sass": "^4.9.0",
+    "node-sass": "^4.13.1",
     "prettier": "^1.18.2",
     "sass": "^1.17.4",
     "sass-loader": "^7.1.0",
